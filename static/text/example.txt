@@ -1,0 +1,17 @@
+<template>
+  <div id="app">
+    <h1>Orbit v2</h1>
+    <o-button>Button</o-button>
+  </div>
+</template>
+
+<script>
+  // Components are imported individually as needed.
+  // Note the object {} syntax. 'import OButton' will not work.
+  import { OButton } from '@square/orbit/components/Button';
+
+  export default {
+    name: 'app',
+    components: { OButton }
+  }
+</script>
