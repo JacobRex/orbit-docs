@@ -4,7 +4,7 @@
       v-for="link in nav"
       :key="link.text"
       :to="link.route"
-      class="ml-x3 font-medium hover:text-gray-40"
+      class="ml-x3 font-medium text-white hover:text-gray-40"
     >
       {{ link.text }}
     </nuxt-link>
