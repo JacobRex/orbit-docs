@@ -9,7 +9,7 @@
           src="header/mobile-menu-icon.svg"
           @click="openMenu"
         />
-        <img class="w-x3" src="square-logo.svg" />
+        <img class="w-x3" src="/square-logo.svg" />
         <div class="ml-space text-t2 text-white">Orbit</div>
       </div>
       <od-nav />

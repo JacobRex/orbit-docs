@@ -3,8 +3,10 @@
     <od-header class="block sticky top-0 md:hidden" mobile-menu />
     <main>
       <od-sider />
-      <div class="max-w-md mx-auto p-x3 md:ml-sider">
-        <nuxt />
+      <div class="md:ml-sider">
+        <div class="max-w-xl mx-auto p-x3">
+          <nuxt />
+        </div>
       </div>
     </main>
   </o-layout>

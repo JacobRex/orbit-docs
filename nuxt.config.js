@@ -1,4 +1,4 @@
-
+const ent = require('ent');
 export default {
   /*
   ** Nuxt rendering mode
@@ -30,6 +30,7 @@ export default {
   */
   css: [
     '@/assets/css/main.css',
+    '@/assets/css/docs.css',
     '@/assets/css/vars.css',
     '@square/orbit/styles.css',
     '@square/orbit/vars.css'
@@ -234,18 +235,19 @@ export default {
             {
               loader: 'md-vue-loader',
               options: {
-                buildDemos: true,
-                // buildDemos(Tag, demoFiles) {
-                //   const listFiles = demoFiles
-                //     .map((file) => `<src-file name="${file.name || ''}" language="html"><template v-pre>${ent.encode(file.content)}</template></src-file>`)
-                //     .join('');
+                // buildDemos: true,
+                buildDemos(Tag, demoFiles) {
+                  const listFiles = demoFiles
+                    .map((file) => `<pre><code><template v-pre>${ent.encode(file.content)}</template></code></pre>`)
+                    .join('');
 
-                //   return `
-                //   <div>
-                //     ${Tag}
-                //     ${listFiles}
-                //   </div>`;
-                // }
+                  return `
+                  <div class="docs">
+                      <div class="demo">${Tag}</div>
+                      ${listFiles}
+                  </div>
+                  `;
+                }
               },
             }
           ],

@@ -16,7 +16,7 @@
         <nuxt-link to="/">
           <img
             class="w-x3 mt-x3 mb-x6"
-            src="square-logo.svg"
+            src="/square-logo.svg"
             @click="closeMenu"
           />
         </nuxt-link>
