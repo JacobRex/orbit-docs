@@ -33,6 +33,7 @@ import Example from "raw-loader!../static/text/example.txt";
 import { OdLogoBar } from "~/components/LogoBar";
 
 export default {
+  layout: "homepage",
   components: {
     OdLogoBar,
   },

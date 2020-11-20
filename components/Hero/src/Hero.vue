@@ -1,15 +1,7 @@
 <template>
-  <header class="py-x2 text-white bg-black-100">
-    <div
-      class="flex flex-col items-center justify-between max-w-xl mx-auto px-x3 sm:flex-row"
-    >
-      <div class="flex items-center mb-x2 sm:mb-0">
-        <img class="w-x3" src="square-logo.svg" />
-        <div class="ml-space text-t2 text-white">Orbit</div>
-      </div>
-      <od-nav />
-    </div>
-    <div class="max-w-md mx-auto my-x8 px-x3 text-center md:my-x16">
+  <div class="bg-black-100 text-white">
+    <od-header />
+    <div class="max-w-md mx-auto py-x8 px-x3 text-center md:py-x16">
       <img class="mx-auto mb-x3" src="orbit.png" width="128" />
       <h1 class="mb-x3 text-d2 font-medium md:text-d1">Orbit</h1>
       <p class="text-t3 mb-x4">
@@ -34,15 +26,15 @@
         </nuxt-link>
       </div>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
-import { OdNav } from "~/components/Nav";
+import { OdHeader } from "~/components/Header";
 
 export default {
   name: "Hero",
-  components: { OdNav },
+  components: { OdHeader },
 };
 </script>
 
