@@ -5,6 +5,7 @@
     >
       <div class="flex items-center mb-x2 sm:mb-0">
         <img
+          v-if="mobileMenu"
           class="absolute top-0 left-0 mt-x3 mr-x2 ml-x3 cursor-pointer sm:relative sm:mt-0 sm:ml-0"
           src="header/mobile-menu-icon.svg"
           @click="openMenu"
