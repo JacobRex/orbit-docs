@@ -51,14 +51,6 @@ export const state = () => ({
           route: '/components/button-group',
         },
         {
-          title: 'Accordion',
-          route: '/components/accordion',
-        },
-        {
-          title: 'Accordion',
-          route: '/components/accordion',
-        },
-        {
           title: 'Card',
           route: '/components/card',
         },

@@ -30,6 +30,7 @@ export default {
   */
   css: [
     '@/assets/css/main.css',
+    '@/assets/css/vars.css',
     '@square/orbit/styles.css',
     '@square/orbit/vars.css'
   ],
@@ -89,6 +90,7 @@ export default {
           x7: 'var(--space-x7)',
           x8: 'var(--space-x8)',
           x16: 'var(--space-x16)',
+          sider: 'var(--docs-sider-width)',
         },
         height: theme => ({
           ...theme('spacing'),
@@ -97,6 +99,7 @@ export default {
           'form-small': 'var(--form-height-small)',
           'form-control-size': 'var(--form-control-size)',
           'layer-max-height': 'var(--layer-max-height)',
+          full: '100%',
           screen: '100vh'
         }),
         borderColor: theme => ({
@@ -133,6 +136,9 @@ export default {
           regular: 'var(--font-weight-regular)',
           medium: 'var(--font-weight-medium)',
         },
+        letterSpacing: {
+          base: '1px',
+        },
         lineHeight: {
           base: 'var(--line-height-base)',
           'form-label': 'var(--form-label-line-height)',
@@ -164,6 +170,11 @@ export default {
           full: '100%',
           ...breakpoints(theme('screens'))
         }),
+        extend: {
+          width: {
+            sider: 'var(--docs-sider-width)',
+          },
+        }
       },
       corePlugins: {
         gradientColorStops: false,
@@ -172,7 +183,6 @@ export default {
         divideColor: false,
         divideOpacity: false,
         divideWidth: false,
-        letterSpacing: false,
         transitionDuration: false,
         transitionTimingFunction: false
       }
@@ -225,6 +235,18 @@ export default {
           ]
         },
       );
+    },
+
+    postcss: {
+      // preset: {
+      //   features: {
+      //     'nesting-rules': true
+      //   }
+      // }
+      plugins: {
+        'postcss-custom-media': {},
+        'postcss-nesting': {}
+      }
     }
   }
 }
