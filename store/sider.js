@@ -206,14 +206,14 @@ export const state = () => ({
           title: 'Textarea',
           route: '/components/textarea',
         },
-        {
-          title: 'Tile',
-          route: '/components/tile',
-        },
-        {
-          title: 'Tiles',
-          route: '/components/tiles',
-        },
+        // {
+        //   title: 'Tile',
+        //   route: '/components/tile',
+        // },
+        // {
+        //   title: 'Tiles',
+        //   route: '/components/tiles',
+        // },
         {
           title: 'Toast',
           route: '/components/toast',

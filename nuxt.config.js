@@ -228,6 +228,29 @@ export default {
     extend(config) {
       config.module.rules.push(
         {
+          test: /\.md$/,
+          use: [
+            'vue-loader',
+            {
+              loader: 'md-vue-loader',
+              options: {
+                buildDemos: true,
+                // buildDemos(Tag, demoFiles) {
+                //   const listFiles = demoFiles
+                //     .map((file) => `<src-file name="${file.name || ''}" language="html"><template v-pre>${ent.encode(file.content)}</template></src-file>`)
+                //     .join('');
+
+                //   return `
+                //   <div>
+                //     ${Tag}
+                //     ${listFiles}
+                //   </div>`;
+                // }
+              },
+            }
+          ],
+        },
+        {
           test: /\.text/,
           exclude: /(node_modules|bower_components)/,
           use: [
