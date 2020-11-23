@@ -213,7 +213,10 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['nuxt-highlightjs', {
+      style: 'atom-one-dark',
+    }]
   ],
   /*
   ** Axios module configuration
@@ -237,7 +240,7 @@ export default {
                 // buildDemos: true,
                 buildDemos(Tag, demoFiles) {
                   const listFiles = demoFiles
-                    .map((file) => `<pre><code><template v-pre>${ent.encode(file.content)}</template></code></pre>`)
+                    .map((file) => `<pre><code v-highlight class="html css javascript"><template v-pre>${ent.encode(file.content)}</template></code></pre>`)
                     .join('');
 
                   return `
