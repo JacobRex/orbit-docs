@@ -42,10 +42,9 @@ export default {
     config: {
       purge: {
         content: [
-          'assets',
-          'components',
-          'layouts',
-          'pages'
+          'components/**/*.vue',
+          'layouts/**/*.vue',
+          'pages/**/*.vue'
         ]
       },
       theme: {
