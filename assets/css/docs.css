@@ -117,7 +117,7 @@
       /* border: var(--divider-border); */
       display: block;
       line-height: 1.5em;
-      max-height: 360px;
+      max-height: 480px;
       margin: -1px;
       overflow: auto;
       padding: var(--space-x3);
