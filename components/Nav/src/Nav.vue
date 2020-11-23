@@ -25,10 +25,6 @@ export default {
           text: "Components",
           route: "/components",
         },
-        {
-          text: "Patterns",
-          route: "/patterns",
-        },
       ],
     };
   },
