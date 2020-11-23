@@ -108,22 +108,20 @@
   }
 
   & > pre {
-    border-bottom: 1px solid var(--color-black-70);
-    border-left: 1px solid var(--color-black-70);
     border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
-    border-right: 1px solid var(--color-black-70);
     margin: 0 0 var(--space-x8) 0;
     overflow: hidden;
 
     & code {
-      background: var(--color-black-70);
       border-radius: 0;
-      color: var(--color-gray-40);
+      /* border: var(--divider-border); */
       display: block;
       line-height: 1.5em;
-      max-height: 360px;
+      max-height: 480px;
+      margin: -1px;
       overflow: auto;
       padding: var(--space-x3);
+      tab-size: 4;
       white-space: pre;
 
 
