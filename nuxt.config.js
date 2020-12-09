@@ -1,4 +1,8 @@
 const ent = require('ent');
+const path = require('path');
+
+const markdownItAnchor = require('markdown-it-anchor');
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -237,17 +241,15 @@ export default {
             {
               loader: 'md-vue-loader',
               options: {
-                // buildDemos: true,
-                buildDemos(Tag, demoFiles) {
+                buildDemos(LiveDemo, demoFiles) {
+                  this.addComponent('DemoBuilder', path.resolve(__dirname, './components/DemoBuilder/DemoBuilder.vue'));
                   const listFiles = demoFiles
-                    .map((file) => `<pre><code v-highlight class="html css javascript"><template v-pre>${ent.encode(file.content)}</template></code></pre>`)
-                    .join('');
+                    .map((file) => `<pre><code v-highlight class="html css javascript"><template v-pre>${ent.encode(file.content)}</template></code></pre>`).join('');
 
                   return `
-                  <div class="docs">
-                      <div class="demo">${Tag}</div>
-                      ${listFiles}
-                  </div>
+                    <demo-builder>
+                      ${LiveDemo}<template v-slot:code>${listFiles}</template>
+                    </demo-builder>
                   `;
                 }
               },
@@ -265,11 +267,6 @@ export default {
     },
 
     postcss: {
-      // preset: {
-      //   features: {
-      //     'nesting-rules': true
-      //   }
-      // }
       plugins: {
         'postcss-custom-media': {},
         'postcss-nesting': {}
