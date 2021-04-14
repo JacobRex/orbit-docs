@@ -1,4 +1,6 @@
 const ent = require('ent');
+import path from 'path';
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -206,7 +208,7 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
   ],
   /*
   ** Nuxt.js modules
@@ -216,7 +218,7 @@ export default {
     '@nuxtjs/axios',
     ['nuxt-highlightjs', {
       style: 'atom-one-dark',
-    }]
+    }],
   ],
   /*
   ** Axios module configuration
@@ -239,16 +241,9 @@ export default {
               options: {
                 // buildDemos: true,
                 buildDemos(Tag, demoFiles) {
-                  const listFiles = demoFiles
-                    .map((file) => `<pre><code v-highlight class="html css javascript"><template v-pre>${ent.encode(file.content)}</template></code></pre>`)
-                    .join('');
-
-                  return `
-                  <div class="docs">
-                      <div class="demo">${Tag}</div>
-                      ${listFiles}
-                  </div>
-                  `;
+                  const code = demoFiles.map(file => ent.encode(file.content));
+                  this.addComponent('DemoBuilder', '~/components/DemoBuilder/DemoBuilder.vue');
+                  return `<demo-builder>${Tag}<template slot="code">${code}</template></demo-builder>`;
                 }
               },
             }

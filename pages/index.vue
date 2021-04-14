@@ -45,3 +45,69 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.prism-editor-wrapper {
+  background-color: #222;
+  color: #eee;
+  padding: 8px 12px;
+  box-sizing: border-box;
+}
+.separate {
+  display: flex;
+  flex-direction: column;
+  width: 950px;
+  margin: 30px auto;
+}
+.preview-separate {
+  padding: 30px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+.description {
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: left;
+}
+.livebox {
+  position: relative;
+  max-width: 950px;
+  margin: auto;
+}
+.hint {
+  position: absolute;
+  top: 100px;
+  left: -200px;
+  font-family: "Nanum Pen Script";
+  font-size: 2em;
+  color: red;
+  transform: rotate(-30deg);
+  transition: transform 0.2s;
+}
+@media (max-width: 1400px) {
+  .hint {
+    transform: none;
+    top: -35px;
+    left: 0;
+  }
+  .hint span {
+    transform: rotate(80deg) translate(10px, 10px);
+    display: inline-block;
+  }
+  .separate {
+    width: 90vw;
+  }
+}
+.button-bar {
+  height: 70px;
+  padding: 5px 0;
+  text-align: left;
+}
+.button-bar button {
+  font-size: 1.5em;
+  padding: 6px;
+  border-radius: 8px;
+  width: 200px;
+}
+</style>

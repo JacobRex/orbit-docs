@@ -11,8 +11,9 @@
 
   & > h1 {
     @apply text-d3;
+    padding-top: 100px;
     font-weight: var(--font-weight-medium);
-    margin: var(--space-x3) 0;
+    back
   }
 
   & > h2 {
@@ -38,6 +39,12 @@
     @apply max-w-md;
   }
 
+  & > blockquote {
+    & p {
+      @apply max-w-md;
+    }
+  }
+
   & > ul {
     margin: 0;
     padding: 0 0 0 var(--space-x2);
@@ -60,7 +67,6 @@
   -------------------------------------------- */
   & > table {
     background: var(--color-white);
-    border: 1px solid var(--divider-border-color);
     border-collapse: separate;
     border-radius: var(--border-radius-base);
     border-spacing: 0;
@@ -71,24 +77,22 @@
     width: 100%;
 
     & thead tr {
-      background-color: var(--color-gray-20);
+      background-color: var(--color-black-90);
     }
 
     & tbody tr {
-      border-bottom: 1px solid var(--divider-border-color);
-
       &:last-of-type {
         border-bottom: 0;
       }
     }
 
     & th {
+      color: var(--color-white);
       font-weight: var(--font-weight-medium);
       padding: var(--space-x2);
     }
 
     & td {
-      border-top: 1px solid var(--divider-border-color);
       padding: var(--space-x2);
     }
   }
@@ -98,11 +102,9 @@
   /* Code Demos
   -------------------------------------------- */
   & .demo {
+    background: white;
     margin-top: var(--space-x2);
     padding: var(--space-x3);
-    border-top: var(--divider-border);
-    border-right: var(--divider-border);
-    border-left: var(--divider-border);
     border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
     overflow: hidden;
   }
@@ -110,12 +112,14 @@
   & > pre {
     border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
     margin: 0 0 var(--space-x8) 0;
+    font-size: 0;
     overflow: hidden;
 
     & code {
       border-radius: 0;
       /* border: var(--divider-border); */
       display: block;
+      font-size: 16px;
       line-height: 1.5em;
       max-height: 480px;
       margin: -1px;
@@ -123,7 +127,6 @@
       padding: var(--space-x3);
       tab-size: 4;
       white-space: pre;
-
 
       &::-webkit-scrollbar {
         width: 1rem;
